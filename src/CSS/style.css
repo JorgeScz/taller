@@ -1,0 +1,72 @@
+.gradient-custom-2 {
+    background: #90caf9;
+    background: -webkit-linear-gradient(to right, #2196f3, #1976d2, #377ce2);
+    background: linear-gradient(to right, #2196f3, #1976d2, #2670df);
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.colorDiv {
+    background-color: #2f3139;
+}
+
+.colorDiv2 {
+    background-color: #23232a;
+}
+
+.input-negro {
+    background-color: #2f3139;
+    color: white;
+    border-color: #254262
+    ;
+}
+
+.input-negro:focus {
+    background-color: #2f3139;
+    color: white;
+    border-color: #254262;
+}
+
+.input-negroR {
+    background-color: #23232a;
+    color: white;
+    border-color: #254262
+    ;
+}
+
+.input-negroR:focus {
+    background-color: #23232a;
+    color: white;
+    border-color: #254262;
+}
+
+
+.imagenR {
+    border-radius: 30px; 
+}
+
+.imagenR {
+    opacity: 0.4;
+}
+
+.mi-div {
+    margin-top: 10px;
+    /* Margen superior de 10 píxeles */
+    margin-right: 30px;
+    /* Margen derecho de 20 píxeles */
+    margin-bottom: 50px;
+    /* Margen inferior de 15 píxeles */
+    margin-left: 10px;
+    /* Margen izquierdo de 30 píxeles */
+}
