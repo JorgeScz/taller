@@ -28,8 +28,7 @@
 .input-negro {
     background-color: #2f3139;
     color: white;
-    border-color: #254262
-    ;
+    border-color: #254262;
 }
 
 .input-negro:focus {
@@ -41,8 +40,7 @@
 .input-negroR {
     background-color: #23232a;
     color: white;
-    border-color: #254262
-    ;
+    border-color: #254262;
 }
 
 .input-negroR:focus {
@@ -53,7 +51,7 @@
 
 
 .imagenR {
-    border-radius: 30px; 
+    border-radius: 30px;
 }
 
 .imagenR {
@@ -69,4 +67,34 @@
     /* Margen inferior de 15 píxeles */
     margin-left: 10px;
     /* Margen izquierdo de 30 píxeles */
+}
+
+
+.preguntas {
+    width: 875px;
+    height: 110px;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    text-align: center;
+    clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+    background-color: #23232a;
+    background-image: radial-gradient(200% 70% at center 20%, #23232a -30%, #23232a 49%, #23232a 50%, #23232a 150%);
+    background-repeat: no-repeat;
+    transition: background-position-y ease-in-out 250ms;
+    border: 2px solid white;
+}
+
+.preguntasF{
+    clip-path: polygon(5% 15%, 95% 15%, 100% 52%, 95% 90%, 5% 90%, 0% 52%);
+    background-color: #fff;
+    border: 2px solid white;
+}
+
+.letras {
+    font-size: smaller; /* Puedes ajustar el tamaño según sea necesario */
 }

@@ -7,6 +7,7 @@ import logo from '../IMG/logo.jpg';
 export default function Login() {
 
   const { loginThunk } = useContext(AuthContext)
+
   const [formState, setFormState] = useState({
     username: '',
     password: '',
@@ -23,31 +24,10 @@ export default function Login() {
     e.preventDefault();
     loginThunk(formState.username, formState.password)
       .then(() => {
-        navegacion('/home')
+          navegacion('/home');
       })
   }
 
-  /*return (
-
-    <div>
-      <h1>Login llll</h1>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Usuario</label>
-          <input type="text" className="form-control" id="username" name='username' value={username}
-           onChange={(e)=>onInputChange(e)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-          <input type="password" className="form-control" id="password" name='password' value={password}
-            onChange={(e)=>onInputChange(e)} />
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-    </div>
-
-  )*/
   return (
     <section className=" colorDiv2" >
       <div className="container py-0">
@@ -57,7 +37,6 @@ export default function Login() {
               <div className="row g-0">
                 <div className="col-lg-7 d-flex align-items-center" style={{}}>
                   <div className="text-white px-3 py-0 p-md-0 mx-md-4">
-                    <h4 className="mb-0 text-center" style={{ color: 'black' }}></h4>
                     <h2>StressTest</h2>
                     <br/>
                     <p>¿Te sientes estresado?</p>                 

@@ -5,6 +5,12 @@ import Login from '../components/Login'
 import Home from '../components/Home'
 import Menu from '../plantilla/Menu'
 import Registro from '../components/Registro'
+import PrivateRoute from './PrivateRoute'
+import Estudiante from '../components/Estudiante'
+import HomeE from '../components/HomeE'
+import Encuesta from '../components/Encuesta'
+import Mensaje from '../components/Mensaje'
+import DatosE from '../components/DatosE'
 //import PrivateRoute from './PrivateRoute'
 
 export default function AppRouter() {
@@ -15,16 +21,49 @@ export default function AppRouter() {
           exact path='/login'
           element={<Login />}
         />
-        <Route 
+        {/* <Route 
           path='/home'
           element={<Home />}
-        />
+        /> */}
 
         <Route
           path='/registro'
           element={<Registro />}
         />
-       
+        <Route
+          path='/home'
+          element={<PrivateRoute children={<Home />} />}
+        />
+        <Route
+          path='/homee'
+          element={<HomeE />}
+        />
+
+        <Route
+          path='/datose/:id'
+          element={<DatosE />}
+        />
+
+        <Route
+          path='/encuesta/:id'
+          element={<Encuesta />}
+        />
+
+        <Route
+          path='/mensaje/:id'
+          element={<Mensaje />}
+        />
+
+        {/* <Route
+          path='/homee'
+          element={<PrivateRoute children={<HomeE />} />}
+        /> */}
+
+        <Route
+          path='/estudiante'
+          element={<PrivateRoute children={<Estudiante />} />}
+        />
+
         {/*
         <Route
         path='/home'
@@ -34,8 +73,8 @@ export default function AppRouter() {
           </PrivateRoute>
         }
         />*/}
-        
-        
+
+
       </Routes>
     </Router>
   )

@@ -24,6 +24,7 @@ export default function Registro() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     const urlB = "http://127.0.0.1:8000/registro/"
     await axios.post(urlB, usuario)
 
@@ -35,7 +36,10 @@ export default function Registro() {
   return (
     <>
       <section className="colorDiv">
-        <h1 className='text-white'>RegístrateAhora!</h1>
+        <div className="d-inline-block">
+          <h1 className='text-white d-inline'><strong>Regístrate</strong></h1>
+          <h1 className='d-inline ml-2' style={{color: '#f81efe'}}><strong>Ahora!</strong></h1>
+        </div>
         <div className="container py-0">
           <div className="row d-flex justify-content-center align-items-center mi-div">
             <div className="col-xl-10">
@@ -45,6 +49,18 @@ export default function Registro() {
                     <div className="row ">
                       <div className="col-lg-6">
                         <div className="card-body p-md-2 mx-md-2">
+                        <div className="form-outline mb-2">
+                            <label className="form-label text-white fs-5 float-start" htmlFor="email">Numero de control</label>
+                            <input
+                              type="text"
+                              required
+                              className="form-control input-negroR "
+                              id="control"
+                              name="control"
+                              value={email}
+                              onChange={(e) => onInputChange(e)}
+                            />
+                          </div>
                           <div className="form-outline mb-2">
                             <label className="form-label text-white fs-5 float-start" htmlFor="email">Correo</label>
                             <input
@@ -144,10 +160,8 @@ export default function Registro() {
             </div>
           </div>
         </div>
-        <br/>
+        <br />
       </section>
     </>
-
-
   )
 }

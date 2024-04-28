@@ -1,20 +1,21 @@
-import React, { useContext} from "react";
-import {Navigate, Route} from 'react-router-dom'
+import React, { useContext } from "react";
+import { Navigate, Outlet, Route, useNavigate } from 'react-router-dom'
 import { AuthContext } from "../context/AuthContext";
 
-export default function PrivateRoute({component: Component, ...rest}) {
+export default function PrivateRoute({ children }) {
 
     const { data } = useContext(AuthContext)
+    const token = data.token
+    console.log(token)
 
-  return (
-    <Route { ...rest }
-        component={(props) => (
-            ( data.token )
-                ? (<Component {...props}/>)
-                : (<Navigate to='/login'/>)
-        )} 
-    />
-  )
+    if (token) {
+        //console.log("entre")
+
+        return children
+    } else {
+        return <Navigate to="/login" />
+    }
+
 }
 
 /*
