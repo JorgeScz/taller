@@ -22,6 +22,16 @@ export default function DatosE() {
       console.error('Error al obtener los datos del estudiante:', error);
     });
   }, [data.token]);
+
+  const edad = (fechaN) =>{
+    const fechaActual = new Date();
+    const fechaNa = new Date(fechaN);
+
+    const diferenciaTiempo = fechaActual - fechaNa;
+    const edadE = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24 * 365))
+    return edadE;
+  }
+
   return (
     <>
       <MenuE />
@@ -39,7 +49,7 @@ export default function DatosE() {
                         <label className="form-label text-white fs-5 float-start" htmlFor="email">Correo</label>
                         <input
                           type="email"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="email"
                           name="email"
@@ -51,7 +61,7 @@ export default function DatosE() {
                         <label className="form-label text-white fs-5 float-start" htmlFor="first_name">Nombre</label>
                         <input
                           type="text"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="first_name"
                           name="first_name"
@@ -63,7 +73,7 @@ export default function DatosE() {
                         <label className="form-label text-white fs-5 float-start" htmlFor="last_name">Apellido</label>
                         <input
                           type="text"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="last_name"
                           name="last_name"
@@ -80,7 +90,7 @@ export default function DatosE() {
                         <label className="form-label text-white fs-5 float-start" htmlFor="carrera">Carrera</label>
                         <input
                           type="text"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="username"
                           name="username"
@@ -89,10 +99,10 @@ export default function DatosE() {
                         />
                       </div>
                       <div className="form-outline mb-2">
-                        <label className="form-label text-white fs-5 float-start" htmlFor="password">Numero de control</label>
+                        <label className="form-label text-white fs-5 float-start" htmlFor="control">Numero de control</label>
                         <input
                           type="text"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="numeroc"
                           name="numeroc"
@@ -101,14 +111,14 @@ export default function DatosE() {
                         />
                       </div>
                       <div className="form-outline mb-4">
-                        <label className="form-label text-white fs-5 float-start" htmlFor="password">Edad</label>
+                        <label className="form-label text-white fs-5 float-start" htmlFor="edad">Edad</label>
                         <input
                           type="text"
-                          required
+                          disabled
                           className="form-control input-negroR "
                           id="edad"
                           name="edad"
-                          value={estudiante?.edad}
+                          value={edad(estudiante?.fecha_nacimiento)}
                         //onChange={(e) => onInputChange(e)}
                         />
                       </div>

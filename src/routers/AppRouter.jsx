@@ -11,6 +11,8 @@ import HomeE from '../components/HomeE'
 import Encuesta from '../components/Encuesta'
 import Mensaje from '../components/Mensaje'
 import DatosE from '../components/DatosE'
+import Resultados from '../components/Resultados'
+import Recomendacion from '../components/Recomendacion'
 //import PrivateRoute from './PrivateRoute'
 
 export default function AppRouter() {
@@ -52,6 +54,15 @@ export default function AppRouter() {
         <Route
           path='/mensaje/:id'
           element={<Mensaje />}
+        />
+        <Route
+          path='/resultados/:resultado'
+          element={<Resultados/>}
+        />
+
+        <Route
+          path='/recomendacion/:res'
+          element={<Recomendacion/>}
         />
 
         {/* <Route

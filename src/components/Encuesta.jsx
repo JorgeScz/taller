@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'
 
 export default function Encuesta() {
-
+    const url = "http://127.0.0.1:8000/test/";
     const { id } = useParams();
     const navegacion = useNavigate();
 
@@ -22,34 +22,35 @@ export default function Encuesta() {
         const newAnswers = [...answers];
         newAnswers[index] = value;
         setAnswers(newAnswers);
+        console.log(`resultado ${resultado}`)
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         console.log('respuestas enviadas:', answers);
 
         const suma = answers.reduce((total, answer) => total + answer, 0);
+        let cont = 0;
+        const sum = answers.map((x) => {
+            cont += x
+        })
+        console.log("la suma es xd ".concat(cont))
 
         // Actualizar el estado con el resultado
-        setTest({
+        const t = {
             ...test,
-            resultado: suma
-        });
-        console.log("listo1111")
-        onSubmit(event);
-        navegacion('/homee')
+            resultado: cont
+        };
+        console.log(t)
+        const urlB = `${url}${id}/`;
+
+
+        await axios.post(urlB, t);
+
+        navegacion(`/resultados/${t.resultado}`)
 
     };
 
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        //console.log(test)
-        //console.log(id)
-        const urlB = `http://127.0.0.1:8000/test/${id}/`;
-        await axios.post(urlB, test);
-        console.log("listo")
-    };
 
     return (
         <>
@@ -88,17 +89,12 @@ export default function Encuesta() {
                                                         [0, 1, 2, 3, 4].map((option) => (
                                                             <div key={option} className="form-check me-4 m-2">
                                                                 <input
-                                                                    required
+                                                                    
                                                                     type="radio"
                                                                     className="form-check-input"
                                                                     id={`option-${index}-${option}`}
                                                                     value={option}
-                                                                    checked={answers[index] === option}
-                                                                    // onChange={() => {
-                                                                    //     const newAnswers = [...answers];
-                                                                    //     newAnswers[index] = option;
-                                                                    //     setAnswers(newAnswers);
-                                                                    // }}
+                                                                    checked={answers[index] === option}                                                              
                                                                     onChange={() => handleChange(index, option)}
                                                                 />
                                                                 <label className="form-check-label letras" htmlFor={`option-${index}-${option}`}>{
@@ -114,7 +110,7 @@ export default function Encuesta() {
                                                         [4, 3, 2, 1, 0].map((option) => (
                                                             <div key={option} className="form-check me-4 m-2">
                                                                 <input
-                                                                    required
+                                                                    
                                                                     type="radio"
                                                                     className="form-check-input"
                                                                     id={`option-${index}-${option}`}
@@ -135,7 +131,7 @@ export default function Encuesta() {
                                             </div>
                                         </div>
                                     ))}
-                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                    <button type="submit" className="btn btn-primary">Terminar</button>
                                 </form>
 
                             </div>

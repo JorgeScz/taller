@@ -43,6 +43,12 @@
     border-color: #254262;
 }
 
+.input-negroR:disabled {
+    background-color: #23232a;
+    color: white;
+    border-color: #254262;
+}
+
 .input-negroR:focus {
     background-color: #23232a;
     color: white;
@@ -89,12 +95,25 @@
     border: 2px solid white;
 }
 
-.preguntasF{
+.preguntasF {
     clip-path: polygon(5% 15%, 95% 15%, 100% 52%, 95% 90%, 5% 90%, 0% 52%);
     background-color: #fff;
     border: 2px solid white;
 }
 
 .letras {
-    font-size: smaller; /* Puedes ajustar el tamaño según sea necesario */
+    font-size: smaller;
+    /* Puedes ajustar el tamaño según sea necesario */
+}
+
+.leve {
+    color: green;
+}
+
+.moderado {
+    color: rgb(238, 255, 0);
+}
+
+.alto {
+    color: red;
 }

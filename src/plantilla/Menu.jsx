@@ -30,15 +30,15 @@ export default function Menu() {
                         </ul>
                         
                     </div>
-                    <div class="dropdown ">
-                        <button class="btn btnDr dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div className="dropdown ">
+                        <button className="btn btnDr dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
                         </button>
-                        <ul class="dropdown-menu text-center divDr">
-                            <li><p class="dropdown-item">Administrador </p></li>
-                            <li><a class="dropdown-item" href="#"></a></li>
+                        <ul className="dropdown-menu text-center divDr">
+                            <li><p className="dropdown-item">Administrador </p></li>
+                            <li><a className="dropdown-item" href="#"></a></li>
                             <form action="Validar" method="POST">
-                                <Link class="dropdown-item" to='/login'>Salir</Link>
+                                <Link className="dropdown-item" to='/login'>Salir</Link>
                             </form>
                         </ul>
                     </div>

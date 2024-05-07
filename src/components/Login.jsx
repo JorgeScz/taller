@@ -13,6 +13,8 @@ export default function Login() {
     password: '',
   })
 
+  const [error, setError] = useState('');
+
   const navegacion = useNavigate();
   const { username, password } = formState
 
@@ -21,11 +23,21 @@ export default function Login() {
   }
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    /*e.preventDefault();
     loginThunk(formState.username, formState.password)
       .then(() => {
           navegacion('/home');
+      })*/
+    e.preventDefault();
+    loginThunk(formState.username, formState.password)
+      .then(() => {
+        
+        navegacion('/home');
       })
+      .catch((error) => {
+        setFormState({ username: '', password: '' });
+        setError('Usuario o contraseña incorrectos');
+      });
   }
 
   return (
@@ -38,8 +50,8 @@ export default function Login() {
                 <div className="col-lg-7 d-flex align-items-center" style={{}}>
                   <div className="text-white px-3 py-0 p-md-0 mx-md-4">
                     <h2>StressTest</h2>
-                    <br/>
-                    <p>¿Te sientes estresado?</p>                 
+                    <br />
+                    <p>¿Te sientes estresado?</p>
                     <br />
                     <p className="small mb-0">
                       <img src={logo} alt="" className='imagenR' height="350" width="" />
@@ -49,7 +61,7 @@ export default function Login() {
                 <div className="col-lg-5">
                   <div className="card-body p-md-2 mx-md-2">
                     <div className="text-center">
-                    <br/><br/>
+                      <br /><br />
                     </div>
                     <form onSubmit={(e) => onSubmit(e)}>
                       <div className="form-outline mb-4">
@@ -76,12 +88,13 @@ export default function Login() {
                       </div>
                       <div className="text-center pt-1 mb-2 pb-3">
                         <button type="submit" className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Ingresar</button>
+                        <div className="text-center text-danger">{error}</div>
                       </div>
                       <div className="text-center">
                         <p className="text-white d-inline">¿No tienes una cuenta? </p>
                         <Link className="d-inline ml-2" to="/registro">Regístrate</Link>
                       </div>
-                    </form>                 
+                    </form>
                   </div>
                 </div>
               </div>
