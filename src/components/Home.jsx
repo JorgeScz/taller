@@ -41,11 +41,6 @@ export default function Home() {
     <>
 
       <Menu />
-      {/* <div>Buuuuuuuuuu</div>
-      <div>
-        <pre>{JSON.stringify(user, null, 4)}</pre> 
-
-      </div> */}
       <section className='colorDiv2'>
         <div className="container row d-flex justify-content-center align-items-center mi-div">
           <div className='col-xl-10 colorDiv m-5'>

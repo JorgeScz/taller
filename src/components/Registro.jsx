@@ -16,7 +16,7 @@ export default function Registro() {
     numeroControl: '',
     confirmPassword: '',
     carrera: '',
-    fechaNacimiento:''
+    fechaNacimiento: ''
   })
 
   const navegacion = useNavigate();
@@ -24,6 +24,7 @@ export default function Registro() {
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [passwordError2, setPasswordError2] = useState('');
   const [submitError, setSubmitError] = useState('');
 
 
@@ -46,8 +47,8 @@ export default function Registro() {
 
     // Validar contraseñas solo si ambos campos de contraseña tienen valor
     if (name === 'password') {
-      const isValid = value === usuario.confirmPassword;
-      setPasswordError(isValid ? '' : 'Las contraseñas no coinciden');
+      const isValidLength = value.length >= 5;
+      setPasswordError2(isValidLength ? '' : 'La contraseña debe tener al menos 5 caracteres');
     }
 
     // Validar la contraseña al cambiar el campo "Confirmar Contraseña"
@@ -109,7 +110,7 @@ export default function Registro() {
                             />
                           </div>
                           <div className="form-outline mb-2">
-                            <label className="form-label text-white fs-5 float-start" htmlFor="email">Correo</label>
+                            <label className="form-label text-white fs-5 float-start" htmlFor="email">Correo Institucional</label>
                             <input
                               type="text"
                               required
@@ -214,6 +215,7 @@ export default function Registro() {
                               value={password}
                               onChange={(e) => onInputChange(e)}
                             />
+                            <div className="text-danger">{passwordError2}</div>
                           </div>
                           <div className="form-outline mb-4">
                             <label className="form-label text-white fs-5 float-start" htmlFor="password">Confirmar Contraseña</label>

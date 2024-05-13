@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext';
+import sesion from '../IMG/sesion.png'
 
 export default function MenuE() {
     const { data } = useContext(AuthContext);
@@ -54,7 +55,7 @@ export default function MenuE() {
 
                     <div className="dropdown ">
                         <button className="btn btnDr dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
+                            <img src={sesion} alt="" height={30} />
                         </button>
                         <ul className="dropdown-menu text-center divDr">
                             <li><p className="dropdown-item">Estudiante </p></li>

@@ -13,6 +13,7 @@ import Mensaje from '../components/Mensaje'
 import DatosE from '../components/DatosE'
 import Resultados from '../components/Resultados'
 import Recomendacion from '../components/Recomendacion'
+import Grafica from '../components/Grafica'
 //import PrivateRoute from './PrivateRoute'
 
 export default function AppRouter() {
@@ -65,6 +66,10 @@ export default function AppRouter() {
           element={<Recomendacion/>}
         />
 
+        <Route
+          path='/grafica'
+          element={<Grafica/>}
+        />
         {/* <Route
           path='/homee'
           element={<PrivateRoute children={<HomeE />} />}

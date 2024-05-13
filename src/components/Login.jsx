@@ -23,11 +23,6 @@ export default function Login() {
   }
 
   const onSubmit = (e) => {
-    /*e.preventDefault();
-    loginThunk(formState.username, formState.password)
-      .then(() => {
-          navegacion('/home');
-      })*/
     e.preventDefault();
     loginThunk(formState.username, formState.password)
       .then(() => {

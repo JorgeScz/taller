@@ -15,10 +15,25 @@ export default function Resultados() {
                     <div className='col-xl-10 colorDiv m-5'>
                         <div className='text-white'>
                             <div className="container">
-                                <h3>Resultado</h3>
-                                <p>{resultado}
+                                <h3><strong>Análisis y resultado</strong></h3>
+                                <br />
+                                <p>Puntos: {resultado}
                                 </p>
                                 <p>Estres: <strong>{resultado < 19 ? 'Leve' : resultado < 37 ? 'Moderado' : 'Alto'}</strong></p>
+                                {resultado > 19 && resultado < 37 && (
+                                    <p>
+                                        Has experimentado un nivel moderado de estrés. Es importante prestar atención a cómo te
+                                        sientes y cosiderar algunas estrategias para gestionar el estrés. Tu nivel de estrés es moderado.
+                                        Puede ser útil explorar algunas técnicas de manejo del estrés para mantener tu bienestar
+                                    </p>
+                                )}
+
+                                {resultado > 37 && (
+                                    <p>
+                                        alto
+                                    </p>
+                                )}
+
                             </div>
                             <div className='container'>
                                 <Link type="submit" className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 mx-3"
