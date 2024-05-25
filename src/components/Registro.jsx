@@ -247,7 +247,7 @@ export default function Registro() {
                       <div className="col-lg-6">
                         <div className="text-center">
                           <p className="text-white d-inline">¿Tienes una cuenta? </p>
-                          <Link className=" d-inline ml-2" to="/login">Ingresar</Link>
+                          <Link className=" d-inline ml-2" to="/">Ingresar</Link>
                         </div>
                       </div>
                     </div>
