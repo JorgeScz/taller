@@ -69,7 +69,7 @@ export default function Registro() {
     const urlB = 'https://taller-back-i5y5.onrender.com/registro/'
     await axios.post(urlB, usuario)
 
-    navegacion('/login');
+    navegacion('/');
 
   }
 
