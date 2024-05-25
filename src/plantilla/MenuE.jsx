@@ -7,7 +7,8 @@ import sesion from '../IMG/sesion.png'
 export default function MenuE() {
     const { data } = useContext(AuthContext);
     const [user, setUser] = useState(null);
-
+    const url = 'https://taller-back-i5y5.onrender.com/usuario/'
+    //const url = 'http://127.0.0.1:8000/usuario/'
 
     useEffect(() => {
         // Intenta obtener los datos del usuario desde el almacenamiento local
@@ -16,7 +17,7 @@ export default function MenuE() {
             setUser(storedUser);
         } else {
             // Si no hay datos almacenados, realiza la solicitud al servidor
-            axios.get('http://127.0.0.1:8000/usuario/', {
+            axios.get(url, {
                 headers: {
                     "Authorization": `Token ${data.token}`
                 }

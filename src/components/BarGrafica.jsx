@@ -49,7 +49,8 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement,
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, Title, Tooltip, Legend, Filler);
 
 export default function BarGrafica() {
-  const url = "http://127.0.0.1:8000/";
+  //const url = "http://127.0.0.1:8000/";
+  const url = 'https://taller-back-i5y5.onrender.com/'
 
   const [cantidad, setCantidad] = useState([0, 0, 0]);
   const [fechaInicio, setFechaInicio] = useState('');
@@ -71,7 +72,7 @@ export default function BarGrafica() {
 
   const cargarCantidadEstres = async () => {
     try {
-      const resultados = await axios.get(`${url}/estudiantesfecha/${fechaInicio}/${fechaFin}/`);
+      const resultados = await axios.get(`${url}estudiantesfecha/${fechaInicio}/${fechaFin}/`);
 
       const estudiantesLeve = resultados.data.filter(estudiante => estudiante.resultado_test < 19);
       const estudiantesModerado = resultados.data.filter(estudiante => estudiante.resultado_test >= 19 && estudiante.resultado_test < 37);

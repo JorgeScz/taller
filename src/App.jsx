@@ -16,7 +16,8 @@ function App() {
 
   const loginThunk = async (username, password) => {
     const res = await axios.post(
-      'http://127.0.0.1:8000/login/',
+      'https://taller-back-i5y5.onrender.com/login/',
+      //'http://127.0.0.1:8000/login/',
       { username: username, password: password}
     )
     console.log(res.data.token)

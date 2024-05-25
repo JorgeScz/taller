@@ -10,6 +10,8 @@ export default function Home() {
 
   const { data } = useContext(AuthContext);
   const [user, setUser] = useState(null);
+  const url = 'https://taller-back-i5y5.onrender.com/'
+  //const url = 'http://127.0.0.1:8000/'
 
   const navegacion = useNavigate();
 
@@ -20,7 +22,7 @@ export default function Home() {
       setUser(storedUser);
     } else {
       // Si no hay datos almacenados, realiza la solicitud al servidor
-      axios.get('http://127.0.0.1:8000/usuario/', {
+      axios.get(`${url}usuario/`, {
         headers: {
           "Authorization": `Token ${data.token}`
         }

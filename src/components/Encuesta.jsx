@@ -5,9 +5,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'
 
 export default function Encuesta() {
-    const url = "http://127.0.0.1:8000/test/";
+    //const url = "http://127.0.0.1:8000/test/";
+    const url = 'https://taller-back-i5y5.onrender.com/test/'
     const { id } = useParams();
     const navegacion = useNavigate();
+
 
     const [answers, setAnswers] = useState(Array(14).fill());
 
@@ -35,7 +37,10 @@ export default function Encuesta() {
             cont += x
         })
         console.log("la suma es xd ".concat(cont))
-
+        if (isNaN(cont)) {
+            alert('Parece que faltan algunas respuestas. Por favor, revise las preguntas y asegúrese de haber respondido todas');
+            return;
+        }
         // Actualizar el estado con el resultado
         const t = {
             ...test,

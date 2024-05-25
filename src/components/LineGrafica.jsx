@@ -43,7 +43,8 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 export default function LineGrafica() {
-  const url = "http://127.0.0.1:8000/";
+  //const url = "http://127.0.0.1:8000/";
+  const url = 'https://taller-back-i5y5.onrender.com/'
   const [resultadosEstudiantes, setResultadosEstudiantes] = useState([]);
   const [fechaInicio, setFechaInicio] = useState('');
   const [fechaFin, setFechaFin] = useState('');
@@ -64,7 +65,7 @@ export default function LineGrafica() {
 
   const cargarResultadosEstudiantes = async () => {
     try {
-      const response = await axios.get(`${url}/estudiantesfecha/${fechaInicio}/${fechaFin}/`);
+      const response = await axios.get(`${url}estudiantesfecha/${fechaInicio}/${fechaFin}/`);
       const estudiantes = response.data;
       const resultados = estudiantes.map(estudiante => estudiante.resultado_test);
       const nombres = estudiantes.map(estudiante => estudiante.nombre); 

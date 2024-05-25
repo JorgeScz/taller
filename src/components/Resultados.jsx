@@ -19,7 +19,12 @@ export default function Resultados() {
                                 <br />
                                 <p>Puntos: {resultado}
                                 </p>
-                                <p>Estres: <strong>{resultado < 19 ? 'Leve' : resultado < 37 ? 'Moderado' : 'Alto'}</strong></p>
+                                <p>Estres: <strong>{resultado < 19 ? 'Bajo' : resultado < 37 ? 'Moderado' : 'Alto'}</strong></p>
+                                {resultado<19 && (
+                                    <p>
+                                        Has experimentado un bajo nivel de estrés. ¡Felicitaciones! Continúa practicando hábitos saludables para mantener este equilibrio.
+                                    </p>
+                                )}
                                 {resultado > 19 && resultado < 37 && (
                                     <p>
                                         Has experimentado un nivel moderado de estrés. Es importante prestar atención a cómo te
@@ -28,9 +33,12 @@ export default function Resultados() {
                                     </p>
                                 )}
 
-                                {resultado > 37 && (
+                                {resultado >= 37 && (
                                     <p>
-                                        alto
+                                        Has experimentado un alto nivel de estrés. Es crucial priorizar tu bienestar y buscar apoyo
+                                         para gestionar el estrés de manera efectiva. Recuerda que no estás solo; hay recursos y personas
+                                          dispuestas a ayudarte. Tómate el tiempo necesario para descansar, practicar técnicas de relajación 
+                                          y cuidar tu salud mental.
                                     </p>
                                 )}
 

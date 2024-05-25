@@ -4,7 +4,8 @@ import axios from 'axios'
 import '../CSS/style.css'
 
 export default function Estudiante() {
-  const url = "http://127.0.0.1:8000/"
+  //const url = "http://127.0.0.1:8000/"
+  const url = 'https://taller-back-i5y5.onrender.com/'
 
   const [estudiantes, setEstudiantes] = useState([])
   const [estudiantesSeleccionados, setEstudiantesSeleccionados] = useState([]);
@@ -22,7 +23,7 @@ export default function Estudiante() {
   }, []);
 
   const cargarEstudiantes = async () => {
-    const resultados = await axios.get(`${url}/estudiantes/`)
+    const resultados = await axios.get(`${url}estudiantes/`)
     setEstudiantes(resultados.data)
 
   }

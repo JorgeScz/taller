@@ -65,7 +65,8 @@ export default function Registro() {
       return;
     }
 
-    const urlB = "http://127.0.0.1:8000/registro/"
+    //const urlB = "http://127.0.0.1:8000/registro/"
+    const urlB = 'https://taller-back-i5y5.onrender.com/registro/'
     await axios.post(urlB, usuario)
 
     navegacion('/login');

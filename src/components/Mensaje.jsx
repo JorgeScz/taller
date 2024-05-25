@@ -8,10 +8,12 @@ export default function Mensaje() {
     const { data } = useContext(AuthContext);
     const [estudiante, setEstudiante] = useState(null);
     const { id } = useParams();
+    const url = 'https://taller-back-i5y5.onrender.com/'
+  //const url = 'http://127.0.0.1:8000/'
 
     useEffect(() => {
         // Realiza la solicitud al servidor para obtener los datos del estudiante
-        axios.get(`http://127.0.0.1:8000/estudiante/${id}/`, {
+        axios.get(`${url}estudiante/${id}/`, {
             headers: {
                 "Authorization": `Token ${data.token}`
             }

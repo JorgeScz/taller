@@ -2,8 +2,31 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import MenuE from '../plantilla/MenuE';
 
+const YouTubeThumbnail = ({ videoUrl }) => {
+    const videoId = videoUrl.split('v=')[1];
+    const ampersandPosition = videoId.indexOf('&');
+    if (ampersandPosition !== -1) {
+        videoId = videoId.substring(0, ampersandPosition);
+    }
+
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+    return (
+        <a href={videoUrl} target="_blank" rel="noopener noreferrer">
+            <img src={thumbnailUrl} alt="YouTube Video Thumbnail" style={{ width: '100%', height: 'auto' }} />
+        </a>
+    );
+};
+
+
 export default function Recomendacion() {
     const { res } = useParams();
+
+    const video1 = 'https://www.youtube.com/watch?v=3rM4W-xXT6Q';
+    const video2 = 'https://www.youtube.com/watch?v=9cULPJfGoRA';
+    const video3 = 'https://www.youtube.com/watch?v=tUXzvOwDkXQ';
+    const video4 = 'https://www.youtube.com/watch?v=i4dwATyTcCk';
+    const video5 = 'https://www.youtube.com/watch?v=hwjmrWjuW5s';
     return (
         <>
             <MenuE />
@@ -15,81 +38,141 @@ export default function Recomendacion() {
 
                                 {res >= 19 && res <= 36 && (
                                     <div>
-                                        <h3>Estres Moderado o Agudo</h3>
-                                        <p>1. Respiración rítmica para disminuir la ansiedad: inspiración y espiración nasal
-                                            y de forma lenta, con los ojos cerrados y esperando que la frecuencia cardiaca disminuya
-                                            y el resto de los síntomas simpáticos (sudor, aceleramiento cerebral...) se reduzcan.
-                                            Después la apertura de los ojos debe mantener la sensación de tranquilidad. Al iniciar
-                                            cualquier actividad el rimo respiratorio no debe perderse
-                                        </p>
-                                        <p>
-                                            2. Realizar un masaje del plexo solar, localizado en la “boca del estómago”, mediante
-                                            inspiraciones muy profundas sobre la región costo abdominal provocando una gran expansión
-                                            hacia fuera de la región abdominal; se mantiene la apnea en inspiración durante 3 segundos;
-                                            se permite la salida por la boca del aire de forma suave. Se repite el proceso por tres veces.
-                                            Después de realizar este masaje se produce una gran bradicardia, gran tranquilidad e incluso
-                                            un poco sensación de mareo.
-                                        </p>
-                                        <p>
-                                            3. Frenar con nuestra inteligencia, con autocontrol o control mental, la reacción de estrés,
-                                            es decir, no preocuparse hasta que no llegue el momento. No hay que olvidar que la mayor parte
-                                            de las veces, el estrés se controla mediante un ejercicio de nuestra razón: el control de
-                                            cualquier comportamiento aprendido puede ser hecho mediante la activación de mecanismos
-                                            inteligentes. Este control mental debe apoyarse en estos principios:
-                                            •	Interrumpir las cadenas de pensamiento destructivo: decir ¡STOP!
-                                            •	Cambiar los pensamientos negativos a positivos.
-                                            •	Abstraerse del marco estresante con escenarios futuros.
-                                            •	Solución posible a los problemas en 5 pasos: análisis de la causa, análisis del efecto,
-                                            buscar diversas soluciones, estudiar el efecto que produciría una solución, analizar resultados
-                                        </p>
-                                        <p>
-                                            4. Eliminar la energía acumulada mediante una actividad física (pasear, correr, bailar, práctica
-                                            deportiva, hablar para contar lo que uno siente...). Si hay que hablar en ese momento lo mejor
-                                            es hablar con movimiento, con melodía de la voz. Este es un buen momento para exagerar el
-                                            movimiento melódico, ya que soltará todas las tensiones.
-                                        </p>
-                                        <p>
-                                            5. Buscar respuestas de relajación (de parada, de descarga hormonal). Soltar la musculatura y
-                                            el espíritu con la relajación.
-                                        </p>
-                                        <p>
-                                            6. Practicar una actividad de desconexión con el exterior o interior. Evasión. (reposo, leer,
-                                            escuchar música, tumbarse en el sofá, dormir, estar con poca gente, darse una ducha de agua
-                                            caliente, tomar el sol, cualquier ejercicio en la piscina, imágenes positivas vividas:
-                                            paisajes, animales..., dedicarse un tiempo a uno mismo, ir de compras, actividades culturales,
-                                            dobles actividades: leer y escuchar música simultáneamente).
-                                        </p>
+                                        <h3>Recomendaciones</h3>
+                                        <h4>Estres: Moderado o Agudo</h4>
+                                        <br />
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-4">
+                                                <h4>
+                                                    Cómo manejar el estrés - 5 claves
+                                                </h4>
+                                            </div>
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video1} />
+                                            </div>
+                                        </div>
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video2} />
+                                            </div>
+                                            <div className="col-4">
+                                                <h4>
+                                                    Auto-masaje zona abdominal y plexo solar
+
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-4">
+                                                <h4>
+                                                    Tips de relajación para reducir el estrés y la ansiedad
+                                                </h4>
+                                            </div>
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video3} />
+                                            </div>
+                                        </div>
+
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-3">
+
+                                            </div>
+                                            <div className="col-6">
+                                                <h4>
+                                                    <a href='https://recomendacionesestresagudo.blogspot.com/2024/05/medidas-usar-en-caso-de-estres-agudo-1.html'
+                                                    target="_blank">
+                                                        Mas recomendaciones</a>
+                                                </h4>
+
+
+                                            </div>
+                                            <div className="col-3">
+
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
                                 {res > 36 && (
                                     <div>
-                                        <h3>Estres Alto o Cronico</h3>
-                                        <p>
-                                            1. Practicar un deporte y/o realizar una mayor vida al aire libre.
-                                        </p>
-                                        <p>
-                                            2. Fomentar las actividades culturales (leer, acudir a exposiciones...).
-                                        </p>
-                                        <p>
-                                            3. Salir de uno mismo: hablar con la gente, ser comunicativo, preocuparse por los demás, cambiar la
-                                            televisión por tus amigos. Participar en actividades de voluntariado.
-                                        </p>
-                                        <p>
-                                            4. Hacer cambios frecuentes de actividad y de preocupaciones. Romper monotonías, empezar.
-                                        </p>
-                                        <p>
-                                            5. Rememorar imágenes mentales agradables de lugares, de personas, de sensaciones, de música
-                                            (real o imaginaria) que disparan sensaciones placenteras y paran el ritmo de la actividad.
-                                        </p>
-                                        <p>
-                                            6. Si nuevos factores estresantes hacen difícil para ti afrontar las situaciones o si las medidas
-                                            de cuidado personal no te alivian el estrés, quizá desees considerar terapia o asesoramiento psicológico.
-                                            La terapia también puede ser una buena idea si te sientes abrumado o atrapado. También puedes pensar en la
-                                            terapia si te preocupas mucho, o si tienes problemas para llevar a cabo las rutinas diarias o cumplir con
-                                            tus obligaciones en el trabajo, en casa o en la escuela. Los consejeros o terapeutas profesionales pueden
-                                            ayudarte a encontrar las fuentes de tu estrés y a aprender nuevos medios para afrontar situaciones
-                                            difíciles.
-                                        </p>
+                                        <h3>Recomendaciones</h3>
+                                        <h4>Estres: Alto o Cronico</h4>
+                                        <br />
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-4">
+                                                <h4>
+                                                    Auto-masaje zona abdominal y plexo solar
+
+                                                </h4>
+                                            </div>
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video2} />
+                                            </div>
+                                        </div>
+
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video5} />
+                                            </div>
+                                            <div className="col-4">
+                                                <h4>
+                                                    3 Pasos para desintoxicar la mente y dejar de pensar tanto
+
+
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-4">
+                                                <h4>
+                                                    Cómo manejar el estrés - 5 claves
+                                                </h4>
+                                            </div>
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video1} />
+                                            </div>
+                                        </div>
+
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video4} />
+                                            </div>
+                                            <div className="col-4">
+                                                <h4>
+                                                    Yoga para estrés y ansiedad- Ideal para calmar el
+                                                    sistema nervioso y reducir el estrés- Anabel Otero
+
+                                                </h4>
+                                            </div>
+                                        </div>
+
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-4">
+                                                <h4>
+                                                    Tips de relajación para reducir el estrés y la ansiedad
+                                                </h4>
+                                            </div>
+                                            <div className="col-8">
+                                                <YouTubeThumbnail videoUrl={video3} />
+                                            </div>
+                                        </div>
+                                        <div className="row align-items-center m-4">
+                                            <div className="col-3">
+
+                                            </div>
+                                            <div className="col-6">
+                                                <h4>
+                                                    <a target="_blank"
+                                                    href='https://recomendacionesestresagudo.blogspot.com/2024/05/medidas-para-lidiar-con-el-estres.html'>
+                                                        Mas recomendaciones</a>
+                                                </h4>
+
+
+                                            </div>
+                                            <div className="col-3">
+
+                                            </div>
+                                        </div>
                                     </div>
                                 )}
                             </div>
