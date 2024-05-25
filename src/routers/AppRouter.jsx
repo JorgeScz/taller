@@ -21,7 +21,7 @@ export default function AppRouter() {
     <Router>
       <Routes>
         <Route
-          exact path='/login'
+          exact path='/'
           element={<Login />}
         />
         {/* <Route 

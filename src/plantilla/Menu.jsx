@@ -38,7 +38,7 @@ export default function Menu() {
                             <li><p className="dropdown-item">Administrador </p></li>
                             <li><a className="dropdown-item" href="#"></a></li>
                             <form action="Validar" method="POST">
-                                <Link className="dropdown-item" to='/login'>Salir</Link>
+                                <Link className="dropdown-item" to='/'>Salir</Link>
                             </form>
                         </ul>
                     </div>

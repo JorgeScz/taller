@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import MenuE from '../plantilla/MenuE';
 
 const YouTubeThumbnail = ({ videoUrl }) => {
-    const videoId = videoUrl.split('v=')[1];
+    let videoId = videoUrl.split('v=')[1];
     const ampersandPosition = videoId.indexOf('&');
     if (ampersandPosition !== -1) {
         videoId = videoId.substring(0, ampersandPosition);

@@ -62,7 +62,7 @@ export default function MenuE() {
                             <li><p className="dropdown-item">Estudiante </p></li>
                             <li><a className="dropdown-item" href="#">{user?.username}</a></li>
                             <form action="Validar" method="POST">
-                                <Link className="dropdown-item" to='/login'>Salir</Link>
+                                <Link className="dropdown-item" to='/'>Salir</Link>
                             </form>
                         </ul>
                     </div>
